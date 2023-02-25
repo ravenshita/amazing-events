@@ -1,1 +1,213 @@
+/* NavBar */
 
+.navbar-nav {
+  display: flexbox;
+  flex-direction: row;
+}
+
+.nav-item {
+  padding: 15px;
+}
+
+.paginatorNav {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-top: 25px;
+  background-color: rgb(252, 27, 121);
+  
+}
+
+.page-link {
+  border-color: rgb(252, 27, 121);
+  background-color: rgba(252, 27, 121);
+}
+
+.page-link span {
+  font-size: 30px;
+  color: aliceblue;
+}
+
+.page-link span:hover {
+  color: rgba(252, 27, 121);
+}
+
+.navTitle {
+  display: flex;
+  align-self: center;
+  padding-left: 40px;
+  padding-right: 40px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: aliceblue;
+}
+
+/* Index and Upcoming Events categories */
+
+.categories {
+  justify-content: center;
+  padding: 15px;
+}
+
+input[type="checkbox"]:checked + label:after {
+  color: rgba(252, 27, 121);
+}
+
+.btn-outline-success {
+  background-color: rgb(168, 168, 168);
+  border-color: rgb(168, 168, 168);
+  color: aliceblue;
+}
+
+.fa-magnifying-glass {
+  color: aliceblue;
+}
+
+.btn-outline-success:hover {
+  border-color: rgba(252, 27, 121);;
+  background-color: rgba(252, 27, 121);
+}
+
+.fa-magnifying-glass:hover {
+  color: aliceblue;
+}
+
+/* Index and Upcoming Events cards */
+
+.card {
+  display: inline-block;
+  justify-content: space-between;
+  margin: 24px;
+  overflow: hidden;
+}
+
+.card-body {
+  align-items: center;
+  text-align: center;
+}
+
+.card-img-top {
+  object-fit: cover;
+  width: 350px;
+  height: 200px;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.text-muted {
+  align-self: center;
+}
+.btn-primary {
+  border-color: rgb(168, 168, 168);
+  background-color: rgb(168, 168, 168);
+}
+
+.btn-primary:hover {
+  border-color: rgba(252, 27, 121);
+  background-color: rgba(252, 27, 121);
+  
+}
+
+/* Past events */
+
+.cardPE {
+  display: flex;
+  justify-content: center;
+  margin: 15px;
+  overflow: hidden;
+}
+
+.cardPE img {
+  object-fit: cover;
+  width: 350px;
+  height: 200px;
+}
+
+
+/* Contact */
+
+.form {
+  width: 50%;
+  margin: auto;
+  margin-top: 15px;
+}
+
+.btnSubmit {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-outline-secondary {
+  
+  background-color: rgb(168, 168, 168);
+  border-color: rgb(168, 168, 168);
+  color: aliceblue;
+}
+
+.btn-outline-secondary:hover {
+  background-color: rgba(252, 27, 121);
+  border-color: aliceblue;
+  color: aliceblue;
+}
+
+/* Stats */
+
+.table {
+  justify-content: center;
+  margin: auto;
+  margin-top: 20px;
+  width: 90%;
+}
+
+.table-light {
+  justify-content: center;
+  margin: auto;
+  width: 50%;
+}
+
+td {
+  height: 35px;
+}
+
+/* Footer */
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  background-color: rgba(252, 27, 121);
+}
+
+.redes {
+  display: inline-flex;
+  justify-content: space-around;
+  padding: 15px;
+}
+
+.fa-brands {
+  margin-top: 10px;
+  margin-right: 10px;
+  font-size: 25px;
+  color: aliceblue;
+}
+
+.cohort {
+  align-self: flex-end;
+  margin-right: 15px;
+  color: aliceblue;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.footer2 {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  background-color: rgba(252, 27, 121);
+}
