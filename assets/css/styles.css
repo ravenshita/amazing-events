@@ -73,9 +73,23 @@
 
 /* Index and Upcoming Events categories */
 
+.sectionChecks {
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+  padding: 5px;
+  margin-top: 5px;
+}
+
 .categories {
-  justify-content: center;
-  padding: 15px;
+  display: flex; 
+  flex-direction: row;
+  padding: 5px;
+  margin-right: 5px;
+}
+
+.form-check-input {
+  margin-right: 5px;
 }
 
 input[type="checkbox"]:checked + label:after {
@@ -100,6 +114,34 @@ input[type="checkbox"]:checked + label:after {
 .fa-magnifying-glass:hover {
   color: aliceblue;
 }
+
+.searchError {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin: 15px;
+}
+
+
+@media screen and (max-width:700px) {
+  .sectionChecks {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width:600px) {
+  .sectionChecks {
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+  }
+
+  .categories {
+    display: flex;
+    flex-direction: column;
+  }
+
+}
+
 
 /* Index and Upcoming Events cards */
 
@@ -167,6 +209,11 @@ input[type="checkbox"]:checked + label:after {
 .btn-primary:hover {
   border-color: rgba(252, 27, 121);
   background-color: rgba(252, 27, 121);
+}
+
+.cardCategories {
+  font-size: 15px;
+  color: rgb(163, 163, 163);
 }
 
 /* Past events */

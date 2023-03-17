@@ -181,39 +181,105 @@ var data = {
   ],
 };
 
-console.log(" Por favor, ya no se que mas hacer :c ");
+console.log([document]);
 
-function paintData(data) {
+const cards = document.getElementById("cardsTemplate");
+const inputSearch = document.querySelector("[dataSearch]");
+const inputChecks = document.getElementById("categories");
+
+// Events
+
+inputSearch.addEventListener("input", doubleCheck);
+
+inputChecks.addEventListener("change", doubleCheck);
+
+// Functions
+
+function paintData(arrayData) {
+  if (arrayData.length == 0) {
+    cards.innerHTML = "<h3 class='searchError'>No matches found</h3>";
+    return;
+  }
   let cardsTemplate = ``;
-  const tagToUpdate = document.getElementById("cardsTemplate");
-  console.log("tagToUpdate", tagToUpdate);
-
-  for (let i = 0; i < data.events.length; i++) {
+  arrayData.forEach((element) => {
     cardsTemplate += `
                   <div class="card" style="width: 18rem;">
-                    <img src="${data.events[i].image}" class="card-img-top" alt="">
+                    <img src="${element.image}" class="card-img-top" alt="">
                       <div class="card-body">
-                        <h5 class="card-title">${data.events[i].name}</h5>
-                         <p class="card-text">${data.events[i].description}</p>
+                        <h5 class="card-title">${element.name}</h5>
+                        <h6 class="cardCategories">${element.category}</h6>
+                         <p class="card-text">${element.description}</p>
                          <div class="moreDetails">
                          <div class="moreDetails1">
                          <h6>Date:</h6>
-                         <p class="card-text">${data.events[i].date}</p>
+                         <p class="card-text">${element.date}</p>
                          </div>
                          <div class="moreDetails2">
                          <h6>Place:</h6>
-                         <p class="card-text">${data.events[i].place}</p> 
+                         <p class="card-text">${element.place}</p> 
                          </div>   
                          </div>              
                       </div>
                     <div class="card-footer">
-                       <small class="text-muted"> Price: ${data.events[i].price} </small>
-                         <a href="#" class="btn btn-primary">More details</a>
+                       <small class="text-muted"> Price: ${element.price} </small>
+                        <a href="./details.html?id=${element._id}" class="btn btn-primary">More details</a>
                      </div>
                  </div>`;
-  }
-  tagToUpdate.innerHTML = cardsTemplate;
+  });
+  cards.innerHTML = cardsTemplate;
 }
-paintData(data);
+paintData(data.events);
 
-console.log ("No pasa una, perris. Ya lo hice!")
+function textFilter(arrayData, text) {
+  let arrayFiltered = arrayData.filter((element) =>
+    element.name.toLowerCase().includes(text.toLowerCase())
+  );
+  return arrayFiltered;
+}
+
+function paintCheckbox(arrayData) {
+  let checks = ``;
+  let repeatedCategory = arrayData.map((element) => element.category);
+  let categories = new Set(
+    repeatedCategory.sort((a, b) => {
+      if (a > b) {
+        return 1;
+      }
+      if (a < b) {
+        return -1;
+      }
+      return 0;
+    })
+  );
+  categories.forEach((element) => {
+    checks += `
+     <div class="categories">
+     <input checksData class="form-check-input" type="checkbox" name="Category" id="${element}"
+      value="${element}" />
+     <label class="form-check-label" for=${element}>${element}</label>
+     </div>
+     `;
+  });
+  inputChecks.innerHTML = checks;
+}
+paintCheckbox(data.events);
+
+function categoriesFilter(arrayData) {
+  let checkboxes = document.querySelectorAll("[checksData]");
+  let arrayChecks = Array.from(checkboxes);
+  let checksChecked = arrayChecks.filter((check) => check.checked);
+  if (checksChecked == 0) {
+    return arrayData;
+  }
+  let checkValues = checksChecked.map((check) => check.value);
+  let filteredArray = arrayData.filter((element) =>
+    checkValues.includes(element.category)
+  );
+  return filteredArray;
+}
+
+function doubleCheck() {
+  let arrayFiltered1 = textFilter(data.events, inputSearch.value);
+  let arrayFiltered2 = categoriesFilter(arrayFiltered1);
+  paintData(arrayFiltered2);
+}

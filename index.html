@@ -68,75 +68,26 @@
       </div>
     </header>
     <main>
-      <section class="categories">
-        <div class="row g-3">
-          <div class="col-xl-1 form-check">
+      <section class="sectionChecks">
+        <div id="categories" class="categories"><!-- js --></div>
+        <div class="col-xl-5">
+          <form id="formSearch" class="d-flex" role="search">
             <input
-              class="form-check-input"
-              type="checkbox"
-              name="Category"
-              id="category1"
-              value="category"
+              dataSearch
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+              value=""
             />
-            <label class="form-check-label" for="category1"> Category </label>
-          </div>
-          <div class="col-xl-1 form-check">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              name="Category"
-              id="category2"
-              value="category"
-            />
-            <label class="form-check-label" for="category2"> Category </label>
-          </div>
-          <div class="col-xl-1 form-check">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              name="Category"
-              id="category3"
-              value="category"
-            />
-            <label class="form-check-label" for="category3"> Category </label>
-          </div>
-          <div class="col-xl-1 form-check">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              name="Category"
-              id="category4"
-              value="category"
-            />
-            <label class="form-check-label" for="category4"> Category </label>
-          </div>
-          <div class="col-xl-1 form-check">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              name="Category"
-              id="category5"
-              value="category"
-            />
-            <label class="form-check-label" for="category5"> Category </label>
-          </div>
-          <div class="col-xl-7">
-            <form class="d-flex" role="search">
-              <input
-                class="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button class="btn btn-outline-success" type="submit">
-                <i class="fa-solid fa-magnifying-glass"></i>
-              </button>
-            </form>
-          </div>
+            <button class="btn btn-outline-success" type="submit">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </form>
         </div>
       </section>
       <section id="cardsTemplate" class="section-cards">
-      <!-- js -->
+        <!-- js -->
       </section>
     </main>
     <footer class="footer">

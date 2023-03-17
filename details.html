@@ -1,103 +1,106 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <title>Details</title>
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <link rel="stylesheet" href="/assets/css/styles.css">
-    <title>Past Events</title>
-</head>
-
-<body>
+  <body>
     <header>
-        <nav class="navbar bg-light">
-            <div class="container">
-                <a class="navbar-brand" href="#">
-                    <img src="/assets/images/Logo-Amazing-Events.png" alt="Bootstrap" width="150" height="35">
-                </a>
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/upcomingevents.html">Upcoming Events</a>
-                    </li>
-                    <li class="nav-item active" aria-current="page">
-                        <a class="nav-link" href="#">Past Events</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/contact.html">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/stats.html">Stats</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        <div class="paginatorNav">
-            <nav aria-label="Page navigation example">
-                <ul class="pagination">
-                    <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                        </a>
-                    </li>
-                    <h1 class="navTitle">Past Events</h1>
-                    <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
+      <nav class="navbar bg-light">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img
+              src="/assets/images/Logo-Amazing-Events.png"
+              alt="Bootstrap"
+              width="150"
+              height="35"
+            />
+          </a>
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/index.html"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/upcomingevents.html"
+                >Upcoming Events</a
+              >
+            </li>
+            <li class="nav-item active" aria-current="page">
+              <a class="nav-link" href="#">Past Events</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/contact.html">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/stats.html">Stats</a>
+            </li>
+          </ul>
         </div>
+      </nav>
+      <div class="paginatorNav">
+        <nav aria-label="Page navigation example">
+          <ul class="pagination">
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+            <h1 class="navTitle">Details</h1>
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
     <main>
-        <section class="sectionPastEvents">
-            <div class="card2">  
-                <div class="PEcard row g-0" >   
-                    <div class="col-md-6">
-                        <img src="/assets/images/Marathon.jpg" class="img-fluid rounded-start" alt="...">
-                    </div>
-                    <div class="col-md-6">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a  wider card with supporting text below as a natural lead-in to
-                                additional content. This content is a little bit longer.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+      <section id="cardsDetails" class="section-cards">
+        <!-- js -->
+      </section>
     </main>
     <footer class="footer">
-        <div class="redes">
-            <div class="btnIg">
-                <a href="#">
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
-            </div>
-            <div class="btnFb">
-                <a href="#">
-                    <i class="fa-brands fa-square-facebook"></i>
-                </a>
-            </div>
-            <div class="btnWsp">
-                <a href="#">
-                    <i class="fa-brands fa-square-whatsapp"></i>
-                </a>
-            </div>
+      <div class="redes">
+        <div class="btnIg">
+          <a href="#">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
         </div>
-        <h2 class="cohort">Cohort</h2>
+        <div class="btnFb">
+          <a href="#">
+            <i class="fa-brands fa-square-facebook"></i>
+          </a>
+        </div>
+        <div class="btnWsp">
+          <a href="#">
+            <i class="fa-brands fa-square-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+      <h2 class="cohort">Cohort</h2>
     </footer>
-    <script src="https://kit.fontawesome.com/5191320c6b.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-        crossorigin="anonymous"></script>
-</body>
-
-</html> -->
+    <script
+      src="https://kit.fontawesome.com/5191320c6b.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/details.js"></script>
+  </body>
+</html>

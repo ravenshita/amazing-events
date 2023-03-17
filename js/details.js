@@ -181,109 +181,36 @@ var data = {
   ],
 };
 
-const cards = document.getElementById("cardsTemplate");
-const inputSearch = document.querySelector("[dataSearch]");
-const inputChecks = document.getElementById("categories");
+const dataEvents = data.events; 
+const queryString = location.search;
+const params = new URLSearchParams(queryString);
+console.log(params)
+const id = params.get("id");
+console.log(id)
+const element = dataEvents.find((element) => element._id == id);
+console.log(dataEvents)
+console.log(element);
 
-// Events
 
-inputSearch.addEventListener("input", doubleCheck);
+  let div = document.getElementById("cardsDetails");
 
-inputChecks.addEventListener("change", doubleCheck);
-
-//Functions
-
-function getFutureEvents(arrayData) {
-  let futureEvents = [];
-  let cardsTemplate = ``;
-
-  if (arrayData.length == 0) {
-    cards.innerHTML = "<h3 class='searchError'>No matches found</h3>";
-    return;
-  }
-
-  arrayData.forEach((element) => {
-    if (element.date > data.currentDate) {
-      futureEvents.push(element);
-      cardsTemplate += `
-        <div class="card" style="width: 18rem;">
-          <img src="${element.image}" class="card-img-top" alt="">
-          <div class="card-body">
-            <h5 class="card-title">${element.name}</h5>
-            <h6 class="cardCategories">${element.category}</h6>
-            <p class="card-text">${element.description}</p>
-            <div class="moreDetails">
-              <div class="moreDetails1">
-                <h6>Date:</h6>
-                <p class="card-text">${element.date}</p>
-              </div>
-              <div class="moreDetails2">
-                <h6>Place:</h6>
-                <p class="card-text">${element.place}</p> 
-              </div>   
-            </div>              
-          </div>
-          <div class="card-footer">
-            <small class="text-muted"> Price: ${element.price} </small>
-            <a href="./details.html?id=${element._id}" class="btn btn-primary">More details</a>
-          </div>
-        </div>`;
-    }
-  });
-  cards.innerHTML = cardsTemplate;
-}
-
-getFutureEvents(data.events);
-
-function textFilter(arrayData, text) {
-  let arrayFiltered = arrayData.filter((element) =>
-    element.name.toLowerCase().includes(text.toLowerCase())
-  );
-  return arrayFiltered;
-}
-function paintCheckbox(arrayData) {
-  let checks = ``;
-  let repeatedCategory = arrayData.map((element) => element.category);
-  let categories = new Set(
-    repeatedCategory.sort((a, b) => {
-      if (a > b) {
-        return 1;
-      }
-      if (a < b) {
-        return -1;
-      }
-      return 0;
-    })
-  );
-  categories.forEach((element) => {
-    checks += `
-     <div class="categories">
-     <input checksData class="form-check-input" type="checkbox" name="Category" id="${element}"
-      value="${element}" />
-     <label class="form-check-label" for=${element}>${element}</label>
-     </div>
-     `;
-  });
-  inputChecks.innerHTML = checks;
-}
-paintCheckbox(data.events);
-
-function categoriesFilter(arrayData) {
-  let checkboxes = document.querySelectorAll("[checksData]");
-  let arrayChecks = Array.from(checkboxes);
-  let checksChecked = arrayChecks.filter((check) => check.checked);
-  if (checksChecked == 0) {
-    return arrayData;
-  }
-  let checkValues = checksChecked.map((check) => check.value);
-  let filteredArray = arrayData.filter((element) =>
-    checkValues.includes(element.category)
-  );
-  return filteredArray;
-}
-
-function doubleCheck() {
-  let arrayFiltered1 = textFilter(data.events, inputSearch.value);
-  let arrayFiltered2 = categoriesFilter(arrayFiltered1);
-  getFutureEvents(arrayFiltered2);
-}
+    div.innerHTML += `
+                  <div class="card" style="width: 18rem;">
+                    <img src="${element.image}" class="card-img-top" alt="">
+                      <div class="card-body">
+                        <h5 class="card-title">${element.name}</h5>
+                        <h6 class="cardCategories">${element.category}</h6>
+                         <p class="card-text">${element.description}</p>
+                         <div class="moreDetails">
+                         <div class="moreDetails1">
+                         <h6>Date:</h6>
+                         <p class="card-text">${element.date}</p>
+                         </div>
+                         <div class="moreDetails2">
+                         <h6>Place:</h6>
+                         <p class="card-text">${element.place}</p> 
+                         </div>   
+                         </div>              
+                      </div>
+                 </div>`;
+             
