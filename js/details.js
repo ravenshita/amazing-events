@@ -1,3 +1,5 @@
+let urlApi = "https://mindhub-xj03.onrender.com/api/amazing";
+
 var data = {
   currentDate: "2022-01-01",
   events: [
